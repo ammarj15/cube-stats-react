@@ -31,7 +31,8 @@ export default function ACube() {
         <div className="CubeTitle">
         <h1>A Cube</h1>
           <video autoPlay loop muted>
-            <source src={ACubeVid} type="video/mp4"/>
+            <source src="https://mycubebucket.s3.us-east-2.amazonaws.com/CubeVids/ACubeVid.mp4"
+ type="video/mp4"/>
           </video>
        <div className="CubeType">
                <CubeFloorsProps 

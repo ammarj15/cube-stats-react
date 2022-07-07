@@ -19,7 +19,7 @@ function TenCubes() {
           <div className="CubeTitle">
           <h1>Ten Cubes</h1>
             <video autoPlay loop muted>
-              <source src={TenCubesVid} type="video/mp4"/>
+              <source src="https://mycubebucket.s3.us-east-2.amazonaws.com/CubeVids/TenCubesVid.mp4" type="video/mp4"/>
             </video>
           <div className="CubeType">
             <CubeFloorsProps 

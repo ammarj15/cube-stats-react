@@ -19,7 +19,7 @@ function OneHundredCubes() {
           <div className="CubeTitle">
           <h1>Hundred Cubes</h1>
             <video autoPlay loop muted>
-              <source src={HundredCubesVid} type="video/mp4"/>
+              <source src="https://mycubebucket.s3.us-east-2.amazonaws.com/CubeVids/HundredCubesVid.mp4" type="video/mp4"/>
             </video>
           <div className="CubeType">
             <CubeFloorsProps
