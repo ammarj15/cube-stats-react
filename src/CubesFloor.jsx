@@ -6,11 +6,11 @@ import CubeStatsApi from './CubeStatsApi';
 
 function ACubesFloor() {
 //Custom Nifty API Workaround
-  const url = 'https://api.niftygateway.com/market/summary-stats/?contractAddress=0xc0cf5b82ae2352303b2ea02c3be88e23f2594171&niftyType=8'
+  const url = 'https://peaceful-shore-97914.herokuapp.com/https://api.niftygateway.com/market/summary-stats/?contractAddress=0xc0cf5b82ae2352303b2ea02c3be88e23f2594171&niftyType=8'
 
   const data = JSON.stringify({
     contractAddress: "0xc0cf5b82ae2352303b2ea02c3be88e23f2594171",
-      niftyType:"8"
+      niftyType:"8",
   });
 
   const [aCubeFloor, getData] = useState(null);
@@ -42,7 +42,7 @@ function ACubesFloor() {
    
     useEffect(() => {
       setLoading(true);
-      axios.get('https://api.niftygateway.com/market/summary-stats/?contractAddress=0xc0cf5b82ae2352303b2ea02c3be88e23f2594171&niftyType=7', data, {
+      axios.get('https://peaceful-shore-97914.herokuapp.com/https://api.niftygateway.com/market/summary-stats/?contractAddress=0xc0cf5b82ae2352303b2ea02c3be88e23f2594171&niftyType=7', data, {
         headers: { 'Content-Type': 'application/json' }})
   
        .then((res) => {
@@ -73,7 +73,7 @@ function ACubesFloor() {
 
     useEffect(() => {
       setLoading(true);
-      axios.get('https://api.niftygateway.com/market/summary-stats/?contractAddress=0xc0cf5b82ae2352303b2ea02c3be88e23f2594171&niftyType=6', data, {
+      axios.get('https://peaceful-shore-97914.herokuapp.com/https://api.niftygateway.com/market/summary-stats/?contractAddress=0xc0cf5b82ae2352303b2ea02c3be88e23f2594171&niftyType=6', data, {
         headers: { 'Content-Type': 'application/json'}})
         
         .then((res) => {
@@ -102,7 +102,7 @@ function ACubesFloor() {
 
     useEffect(() => {
       setLoading(true);
-      axios.get('https://api.niftygateway.com/market/summary-stats/?contractAddress=0xc0cf5b82ae2352303b2ea02c3be88e23f2594171&niftyType=5', data, {
+      axios.get('https://peaceful-shore-97914.herokuapp.com/https://api.niftygateway.com/market/summary-stats/?contractAddress=0xc0cf5b82ae2352303b2ea02c3be88e23f2594171&niftyType=5', data, {
         headers: { 'Content-Type': 'application/json'}})
         
         .then((res) => {
@@ -131,7 +131,7 @@ function ACubesFloor() {
 
     useEffect(() => {
       setLoading(true);
-      axios.get('https://api.niftygateway.com/market/summary-stats/?contractAddress=0xc0cf5b82ae2352303b2ea02c3be88e23f2594171&niftyType=4', data, {
+      axios.get('https://peaceful-shore-97914.herokuapp.com/https://api.niftygateway.com/market/summary-stats/?contractAddress=0xc0cf5b82ae2352303b2ea02c3be88e23f2594171&niftyType=4', data, {
         headers: { 'Content-Type': 'application/json'}})
         
         .then((res) => {
@@ -160,7 +160,7 @@ function ACubesFloor() {
 
     useEffect(() => {
       setLoading(true);
-      axios.get('https://api.niftygateway.com/market/summary-stats/?contractAddress=0xc0cf5b82ae2352303b2ea02c3be88e23f2594171&niftyType=3', data, {
+      axios.get('https://peaceful-shore-97914.herokuapp.com/https://api.niftygateway.com/market/summary-stats/?contractAddress=0xc0cf5b82ae2352303b2ea02c3be88e23f2594171&niftyType=3', data, {
         headers: { 'Content-Type': 'application/json'}})
         
         .then((res) => {
@@ -189,7 +189,7 @@ function ACubesFloor() {
 
     useEffect(() => {
       setLoading(true);
-      axios.get('https://api.niftygateway.com/market/summary-stats/?contractAddress=0xc0cf5b82ae2352303b2ea02c3be88e23f2594171&niftyType=2', data, {
+      axios.get('https://peaceful-shore-97914.herokuapp.com/https://api.niftygateway.com/market/summary-stats/?contractAddress=0xc0cf5b82ae2352303b2ea02c3be88e23f2594171&niftyType=2', data, {
         headers: { 'Content-Type': 'application/json'}})
         
         .then((res) => {
@@ -218,7 +218,7 @@ function ACubesFloor() {
 
     useEffect(() => {
       // setLoading(true);
-      axios.get('https://api.niftygateway.com/market/summary-stats/?contractAddress=0xc0cf5b82ae2352303b2ea02c3be88e23f2594171&niftyType=1', data, {
+      axios.get('https://peaceful-shore-97914.herokuapp.com/https://api.niftygateway.com/market/summary-stats/?contractAddress=0xc0cf5b82ae2352303b2ea02c3be88e23f2594171&niftyType=1', data, {
         headers: { 'Content-Type': 'application/json'}})
         
         .then((res) => {
