@@ -39,9 +39,9 @@ For example:</p>
 <br></br>
 "A Cube"</ul>
 
-<h1 class="bottomTitle">Who is Pak</h1>
-<img class="pakCopy" src={Pakcopy} type="image/png" />
-<p class="pakDisc">Pak is an omniscient designer/developer/wizard, 
+<h1 className="bottomTitle">Who is Pak</h1>
+<img className="pakCopy" src={Pakcopy} type="image/png" />
+<p className="pakDisc">Pak is an omniscient designer/developer/wizard, 
   one of the leads of the design scene as the founder of 
   Undream and one of the prominent social media figures as the 
   creator of Archillect, the synthetic curator. 

@@ -2,12 +2,14 @@ import styled from 'styled-components';
 import { Link, Route } from 'react-router-dom';
 
 
+
 export const HeaderContainer = styled.nav`
   width: 100%;
   height: ${(props) => (props.extendHeader ? "100vh" : "80px")};
   display: flex;
   flex-direction: column;
   border-bottom: 1px solid;
+  background-color: #111110 ;
 
   @media (min-width: 891px) {
     height: 80px;
@@ -114,4 +116,10 @@ export const HeaderExtendedContainer = styled.div`
   }
   `;
 
-  
+export const routesFade = styled.div`
+transform: translateX(${({ animate }) => (animate ? '0' : '-50vw')});
+transition: transform 1s;
+height: 650px;
+width: 250px;
+background-color: green;
+  `;
