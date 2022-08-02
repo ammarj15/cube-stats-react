@@ -12,10 +12,8 @@ import FiveHundredCubes from './Components/FiveHundredCubes';
 import OneThousandCubes from './Components/OneThousandCubes';
 import BottomHalf from './Components/BottomHalf';
 import Footer from './Components/Footer';
-import { useRef, useLayoutEffect } from 'react';
-import { useInView } from 'react-intersection-observer';
-import { width } from '@mui/system';
-import $ from 'jquery';
+// import $ from jQuery;
+
 
 
 
@@ -30,12 +28,12 @@ function App() {
     
     const topDistance = window.pageYOffset + 
     document.getElementById('routesFade').getBoundingClientRect().top;
-    console.log("top Distance is ", topDistance)
+    // console.log("top Distance is ", topDistance)
     
     let elementHeight = element.offsetHeight;
-    console.log("element height: ", elementHeight)
+    // console.log("element height: ", elementHeight)
     let scrollTop = document.documentElement.scrollTop;
-    console.log("Scroll Top is ", scrollTop)
+    // console.log("Scroll Top is ", scrollTop)
     let opacity = 1;
     
     if (scrollTop > topDistance) {
