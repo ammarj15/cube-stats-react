@@ -12,7 +12,7 @@ import FiveHundredCubes from './Components/FiveHundredCubes';
 import OneThousandCubes from './Components/OneThousandCubes';
 import BottomHalf from './Components/BottomHalf';
 import Footer from './Components/Footer';
-import $ from 'jquery';
+import {} from 'jquery';
 
 
 
@@ -66,7 +66,7 @@ function App() {
         <Header></Header>
         </span>
         
-          <span className='scrolling' id='scrolling'>
+          <div className='scrolling' id='scrolling'>
           
         <Routes >
         <Route path = "/" element = {<ACube />} />
@@ -78,7 +78,7 @@ function App() {
           <Route path = "/FiveHundredCubes" element = {<FiveHundredCubes />}/>      
           <Route path = "/ThousandCubes" element = {<OneThousandCubes />}/>      
         </Routes>
-        </span>
+        </div>
         <div className="routesFade" id='routesFade'></div>
        
        <section>
