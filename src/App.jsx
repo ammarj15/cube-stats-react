@@ -21,11 +21,12 @@ import $ from 'jquery';
 function App() { 
   
    let scrolling = document.getElementById('scrolling');
+   console.log("got this far!")
    function fadeOut(element) {
     if(!element){
       return;
     }
-    
+    console.log("got this far!!")
     const topDistance = window.pageYOffset + 
     document.getElementById('routesFade').getBoundingClientRect().top;
     console.log("top Distance is ", topDistance)
