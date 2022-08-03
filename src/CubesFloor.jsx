@@ -22,7 +22,7 @@ function ACubesFloor() {
 
      .then((res) => {
       const niftyResponse = [res.data]; 
-      console.log(niftyResponse);
+      // console.log(niftyResponse);
       getData(niftyResponse);
 
      });
@@ -47,7 +47,6 @@ function ACubesFloor() {
   
        .then((res) => {
         const niftyFiveResponse = [res.data]; 
-        console.log(niftyFiveResponse);
         fiveData(niftyFiveResponse);
   
        })

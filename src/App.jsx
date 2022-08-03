@@ -12,47 +12,22 @@ import FiveHundredCubes from './Components/FiveHundredCubes';
 import OneThousandCubes from './Components/OneThousandCubes';
 import BottomHalf from './Components/BottomHalf';
 import Footer from './Components/Footer';
-import {} from 'jquery';
+import { fadeOut } from './styles/TopHalfFade';
+
 
 
 
 
 
 function App() { 
+  let scrolling = document.getElementById('scrolling');
   
-   let scrolling = document.getElementById('scrolling');
-   console.log("got this far!")
-   function fadeOut(element) {
-    if(!element){
-      return;
-    }
-    console.log("got this far!!")
-    const topDistance = window.pageYOffset + 
-    document.getElementById('routesFade').getBoundingClientRect().top;
-    console.log("top Distance is ", topDistance)
-    
-    let elementHeight = element.offsetHeight;
-    // console.log("element height: ", elementHeight)
-    let scrollTop = document.documentElement.scrollTop;
-    console.log("Scroll Top is ", scrollTop)
-    let opacity = 1;
-    
-    if (scrollTop > topDistance) {
-      opacity = 1 - (scrollTop - topDistance) / elementHeight;
-      
-    }
-
-    if (opacity >= 0) {
-      element.style.opacity = opacity;
-    }
-   }
-
-   function Scroller() {
+  function Scroller() {
     fadeOut(scrolling);
    }
-
-   window.addEventListener('scroll', Scroller);
    
+   window.addEventListener('scroll', Scroller);
+  
 
   // const url = 'https://peaceful-shore-97914.herokuapp.com/https://api.niftygateway.com/market/summary-stats/'
 
@@ -69,7 +44,7 @@ function App() {
           <div className='scrolling' id='scrolling'>
           
         <Routes >
-        <Route path = "/" element = {<ACube />} />
+        <Route path = "/" element = {<ACube />}/>
           <Route path = "/FiveCubes" element = {<FiveCubes />}/>
           <Route path = "/TenCubes" element = {<TenCubes />}/>
           <Route path = "/TwentyCubes" element = {<TwentyCubes />}/>

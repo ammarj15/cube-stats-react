@@ -10,7 +10,7 @@ import ACubeVid from './CubeVids/ACubeVid.mp4';
 export default function ACube() { 
   
   const  { aCubeFloor } = ACubesFloor();
-  console.log(aCubeFloor);
+  // console.log(aCubeFloor);
 
   // if (loading) return <h1> Loading... </h1>;
  
