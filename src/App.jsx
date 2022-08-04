@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import './App.css';
 import Header from './Components/Header';
 import { Routes, Route, NavLink, Router } from 'react-router-dom';
@@ -20,7 +20,34 @@ import { FadeOut } from './styles/TopHalfFade';
 
 
 function App() { 
+ 
   let Scrolling = document.getElementById('scrolling');
+  function FadeOut(element) {
+    if(!element){
+      return;
+    }
+   //  console.log("got this far!!")
+    const topDistance = window.pageYOffset + 
+    document.getElementById('routesFade').getBoundingClientRect().top;
+    console.log("top Distance is ", topDistance)
+    
+    let elementHeight = element.offsetHeight;
+    // console.log("element height: ", elementHeight)
+    let scrollTop = document.documentElement.scrollTop;
+   //  console.log("Scroll Top is ", scrollTop)
+    let opacity = 1;
+    
+    if (scrollTop > topDistance) {
+      opacity = 1 - (scrollTop - topDistance) / elementHeight;
+      
+    }
+   
+    if (opacity >= 0) {
+      element.style.opacity = opacity;
+     console.log("opacity is :", opacity);
+    }
+   
+   }
   
   function Scroller() {
     FadeOut(Scrolling);
@@ -41,7 +68,7 @@ function App() {
         <Header></Header>
         </span>
         
-          <div className='scrollings' id='scrolling'>
+          <div className='scrollings' id='scrolling' >
           
         <Routes >
         <Route path = "/" element = {<ACube />}/>
