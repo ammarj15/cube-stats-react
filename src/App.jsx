@@ -12,7 +12,7 @@ import FiveHundredCubes from './Components/FiveHundredCubes';
 import OneThousandCubes from './Components/OneThousandCubes';
 import BottomHalf from './Components/BottomHalf';
 import Footer from './Components/Footer';
-import { fadeOut } from './styles/TopHalfFade';
+import { FadeOut } from './styles/TopHalfFade';
 
 
 
@@ -23,7 +23,7 @@ function App() {
   let Scrolling = document.getElementById('scrolling');
   
   function Scroller() {
-    fadeOut(Scrolling);
+    FadeOut(Scrolling);
    }
    
    window.addEventListener('scroll', Scroller);
@@ -54,7 +54,7 @@ function App() {
           <Route path = "/ThousandCubes" element = {<OneThousandCubes />}/>      
         </Routes>
         </div>
-        <div className="routesFades" id='routesFade'></div>
+        <div className="routesFades" id='routesFade' ></div>
        
        <section>
        <BottomHalf></BottomHalf>

@@ -1,5 +1,5 @@
 
-export function fadeOut(element) {
+export function FadeOut(element) {
  if(!element){
    return;
  }
