@@ -20,10 +20,10 @@ import { fadeOut } from './styles/TopHalfFade';
 
 
 function App() { 
-  let scrolling = document.getElementById('scrolling');
+  let Scrolling = document.getElementById('scrolling');
   
   function Scroller() {
-    fadeOut(scrolling);
+    fadeOut(Scrolling);
    }
    
    window.addEventListener('scroll', Scroller);
