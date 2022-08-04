@@ -1,7 +1,7 @@
-import React, {useState, useEffect, useRef} from 'react';
+import {React, useRef} from 'react';
 import './App.css';
 import Header from './Components/Header';
-import { Routes, Route, NavLink, Router } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import FiveCubes from './Components/FiveCubes';
 import ACube from './Components/aCube';
 import TenCubes from './Components/TenCubes';
@@ -12,7 +12,7 @@ import FiveHundredCubes from './Components/FiveHundredCubes';
 import OneThousandCubes from './Components/OneThousandCubes';
 import BottomHalf from './Components/BottomHalf';
 import Footer from './Components/Footer';
-import { FadeOut } from './styles/TopHalfFade';
+
 
 
 
@@ -21,14 +21,15 @@ import { FadeOut } from './styles/TopHalfFade';
 
 function App() { 
  
-  let Scrolling = document.getElementById('scrolling');
+  let scrollingRef = useRef(null);
+  let routeRef = useRef(null);
   function FadeOut(element) {
     if(!element){
       return;
     }
    //  console.log("got this far!!")
     const topDistance = window.pageYOffset + 
-    document.getElementById('routesFade').getBoundingClientRect().top;
+    routeRef.current.getBoundingClientRect().top;
     console.log("top Distance is ", topDistance)
     
     let elementHeight = element.offsetHeight;
@@ -50,7 +51,7 @@ function App() {
    }
   
   function Scroller() {
-    FadeOut(Scrolling);
+    FadeOut(scrollingRef.current);
    }
    
    window.addEventListener('scroll', Scroller);
@@ -68,7 +69,7 @@ function App() {
         <Header></Header>
         </span>
         
-          <div className='scrollings' id='scrolling' >
+          <div className='scrollings' id='scrolling' ref={scrollingRef}>
           
         <Routes >
         <Route path = "/" element = {<ACube />}/>
@@ -81,7 +82,7 @@ function App() {
           <Route path = "/ThousandCubes" element = {<OneThousandCubes />}/>      
         </Routes>
         </div>
-        <div className="routesFades" id='routesFade' ></div>
+        <div className="routesFades" id='routesFade' ref={routeRef}></div>
        
        <section>
        <BottomHalf></BottomHalf>
