@@ -41,7 +41,7 @@ function App() {
         <Header></Header>
         </span>
         
-          <div className='scrolling' id='scrolling'>
+          <div className='scrollings' id='scrolling'>
           
         <Routes >
         <Route path = "/" element = {<ACube />}/>
@@ -54,7 +54,7 @@ function App() {
           <Route path = "/ThousandCubes" element = {<OneThousandCubes />}/>      
         </Routes>
         </div>
-        <div className="routesFade" id='routesFade'></div>
+        <div className="routesFades" id='routesFade'></div>
        
        <section>
        <BottomHalf></BottomHalf>
