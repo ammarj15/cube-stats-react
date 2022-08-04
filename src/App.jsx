@@ -30,7 +30,7 @@ function App() {
    //  console.log("got this far!!")
     const topDistance = window.pageYOffset + 
     routeRef.current.getBoundingClientRect().top;
-    console.log("top Distance is ", topDistance)
+    // console.log("top Distance is ", topDistance)
     
     let elementHeight = element.offsetHeight;
     // console.log("element height: ", elementHeight)
@@ -45,7 +45,7 @@ function App() {
    
     if (opacity >= 0) {
       element.style.opacity = opacity;
-     console.log("opacity is :", opacity);
+    //  console.log("opacity is :", opacity);
     }
    
    }
