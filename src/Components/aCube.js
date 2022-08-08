@@ -1,15 +1,15 @@
-import React, { useEffect} from 'react';
+import React from 'react';
 import '../App.css';
-import axios from 'axios';
-import {CubeFloorsProps, CubeStats} from '../CubeStats'
+import {CubeFloorsProps} from '../CubeStats'
 import CubeStatsApi from '../CubeStatsApi';
-import { ACubesFloor, FiveCubesFloor } from '../CubesFloor';
-import ACubeVid from './CubeVids/ACubeVid.mp4';
+import { ACubesFloor, ACubeOpenSea} from '../CubesFloor';
+
 
 
 export default function ACube() { 
   
   const  { aCubeFloor } = ACubesFloor();
+  const { cubeOpen } = ACubeOpenSea();
   // console.log(aCubeFloor);
 
   // if (loading) return <h1> Loading... </h1>;
@@ -37,6 +37,7 @@ export default function ACube() {
        <div className="CubeType">
                <CubeFloorsProps 
               currentFloor={floor_price_in_cents/100} originalPrice={orig_price_in_cents/100}/>
+              <h2>OpenSea Floor: { cubeOpen } Ξ</h2>
               <CubeStatsApi />
           </div>
           </div>

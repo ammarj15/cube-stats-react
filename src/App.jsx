@@ -1,4 +1,4 @@
-import {React, useRef} from 'react';
+import {React, useRef, useState, useEffect} from 'react';
 import './App.css';
 import Header from './Components/Header';
 import { Routes, Route } from 'react-router-dom';
@@ -12,6 +12,7 @@ import FiveHundredCubes from './Components/FiveHundredCubes';
 import OneThousandCubes from './Components/OneThousandCubes';
 import BottomHalf from './Components/BottomHalf';
 import Footer from './Components/Footer';
+import axios from 'axios';
 
 
 
@@ -45,7 +46,7 @@ function App() {
    
     if (opacity >= 0) {
       element.style.opacity = opacity;
-    //  console.log("opacity is :", opacity);
+     console.log("opacity is :", opacity);
     }
    
    }
@@ -56,7 +57,6 @@ function App() {
    
    window.addEventListener('scroll', Scroller);
   
-
   // const url = 'https://peaceful-shore-97914.herokuapp.com/https://api.niftygateway.com/market/summary-stats/'
 
   return (

@@ -5,6 +5,8 @@ import CubeStatsApi from './CubeStatsApi';
 
 
 function ACubesFloor() {
+  
+  
 //Custom Nifty API Workaround
   const url = 'https://peaceful-shore-97914.herokuapp.com/https://api.niftygateway.com/market/summary-stats/?contractAddress=0xc0cf5b82ae2352303b2ea02c3be88e23f2594171&niftyType=8'
 
@@ -29,6 +31,25 @@ function ACubesFloor() {
     }, []);
     return { aCubeFloor }
   }
+  function ACubeOpenSea(){
+    const[cubeOpen, setCubeOpen] = useState(null);
+
+    useEffect(() => {
+
+      axios.get('https://api.opensea.io/collection/the-fungible-by-pak/stats', {
+        headers: { 'Content-Type': 'application/json' }
+      }
+      )
+      .then((res) => {
+        const openSeaRes = [res.data.stats.floor_price];
+        // console.log(openSeaRes)
+        setCubeOpen(openSeaRes[0]);
+
+      });
+    }, []);
+    return { cubeOpen }
+   }
+
   function FiveCubesFloor() {
     const [fiveCubes, fiveData] = useState(null);
     const [loading, setLoading] = useState(false);
@@ -236,5 +257,7 @@ function ACubesFloor() {
       return { thousandCubes }
     }
 
-  export {ACubesFloor, FiveCubesFloor, TenCubesFloor, TwentyCubesFloor, FiftyCubesFloor, FiveHundredCubesFloor, OneHundredCubesFloor, OneThousandCubesFloor};
+   
+
+  export {ACubesFloor, ACubeOpenSea, FiveCubesFloor, TenCubesFloor, TwentyCubesFloor, FiftyCubesFloor, FiveHundredCubesFloor, OneHundredCubesFloor, OneThousandCubesFloor};
 
