@@ -44,9 +44,11 @@ function ACubesFloor() {
         const openSeaRes = [res.data.stats.floor_price];
         // console.log(openSeaRes)
         setCubeOpen(openSeaRes[0]);
-
+        
+        
       });
     }, []);
+    console.log(cubeOpen)
     return { cubeOpen }
    }
 

@@ -29,6 +29,34 @@ body {
     padding-left: 0;
 };
 }
+
+@media ( max-height: 600px){
+  .scrollings video{
+    width: 200px;
+    height: 200px;
+};
+}
+
+@media ( max-height: 600px) and ( max-width: 600px){
+  .scrollings video{
+    width: 150px;
+    height: 150px;
+};
+}
+
+@media ( max-height: 600px){
+  .scrollings .CubeType{
+    font-size: 10px;
+    padding-top: 0%;
+};
+}
+
+@media ( max-height: 600px){
+  .scrollings h1{
+    font-size: medium;
+};
+}
+
 @media ( max-width: 600px){
   .CubeType{
     font-size: 10px;
@@ -49,6 +77,12 @@ body {
   color: white;
   border-bottom: 1px solid;
   border-color: grey;
+}
+
+@media (min-width: 825px){
+  .CubeType h2{
+    width: 80%;
+  }
 }
 
 .CubeTitle {

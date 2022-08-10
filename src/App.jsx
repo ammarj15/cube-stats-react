@@ -46,7 +46,7 @@ function App() {
    
     if (opacity >= 0) {
       element.style.opacity = opacity;
-     console.log("opacity is :", opacity);
+    // console.log("opacity is :", opacity);
     }
    
    }
