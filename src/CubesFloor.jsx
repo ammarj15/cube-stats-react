@@ -36,7 +36,7 @@ function ACubesFloor() {
 
     useEffect(() => {
 
-      axios.get('https://api.opensea.io/collection/the-fungible-by-pak/stats', {
+      axios.get('https://peaceful-shore-97914.herokuapp.com/https://api.opensea.io/collection/the-fungible-by-pak/stats', {
         headers: { 'Content-Type': 'application/json' }
       }
       )
