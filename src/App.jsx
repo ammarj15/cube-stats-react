@@ -12,7 +12,8 @@ import FiveHundredCubes from './Components/FiveHundredCubes';
 import OneThousandCubes from './Components/OneThousandCubes';
 import BottomHalf from './Components/BottomHalf';
 import Footer from './Components/Footer';
-import axios from 'axios';
+import { ClimbingBoxLoader, ClipLoader } from 'react-spinners';
+import { flexbox, height } from '@mui/system';
 
 
 
@@ -57,6 +58,17 @@ function App() {
    
    window.addEventListener('scroll', Scroller);
   
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 4000);
+  }, [])
+
+const override = {
+  position:"inherit"
+}
   // const url = 'https://peaceful-shore-97914.herokuapp.com/https://api.niftygateway.com/market/summary-stats/'
 
   return (
@@ -70,7 +82,11 @@ function App() {
         </span>
         
           <div className='scrollings' id='scrolling' ref={scrollingRef}>
-          
+        <div className='dopeLoading'>
+          {loading ? <ClimbingBoxLoader
+                      color='white'
+                      cssOverride={override}
+                        /> : 
         <Routes >
         <Route path = "/" element = {<ACube />}/>
           <Route path = "/FiveCubes" element = {<FiveCubes />}/>
@@ -80,7 +96,8 @@ function App() {
           <Route path = "/OneHundredCubes" element = {<OneHundredCubes />}/>
           <Route path = "/FiveHundredCubes" element = {<FiveHundredCubes />}/>      
           <Route path = "/ThousandCubes" element = {<OneThousandCubes />}/>      
-        </Routes>
+    </Routes>
+}</div>
         </div>
         <div className="routesFades" id='routesFade' ref={routeRef}></div>
        
