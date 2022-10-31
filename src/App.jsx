@@ -58,13 +58,13 @@ function App() {
    
    window.addEventListener('scroll', Scroller);
   
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, );
-  }, [])
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setLoading(false);
+  //   }, );
+  // }, [])
 
 const override = {
   position:"inherit"
@@ -82,11 +82,11 @@ const override = {
         </span>
         
           <div className='scrollings' id='scrolling' ref={scrollingRef}>
-        <div className='dopeLoading'>
+        {/* <div className='dopeLoading'>
           {loading ? <ClimbingBoxLoader
                       color='white'
                       cssOverride={override}
-                        /> : 
+                        /> :  */}
         <Routes >
         <Route path = "/" element = {<ACube />}/>
           <Route path = "/FiveCubes" element = {<FiveCubes />}/>
@@ -97,7 +97,7 @@ const override = {
           <Route path = "/FiveHundredCubes" element = {<FiveHundredCubes />}/>      
           <Route path = "/ThousandCubes" element = {<OneThousandCubes />}/>      
     </Routes>
-}</div>
+
         </div>
         <div className="routesFades" id='routesFade' ref={routeRef}></div>
        
