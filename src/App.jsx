@@ -41,7 +41,7 @@ function App() {
     let opacity = 1;
     
     if (scrollTop > topDistance) {
-      opacity = 1 - (scrollTop - topDistance) / elementHeight;
+      opacity = .8 - (scrollTop - topDistance) / elementHeight;
       
     }
    
