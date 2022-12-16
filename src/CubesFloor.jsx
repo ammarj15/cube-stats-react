@@ -8,23 +8,27 @@ function ACubesFloor() {
   
   
 //Custom Nifty API Workaround
-  const url = 'https://peaceful-shore-97914.herokuapp.com/https://api.niftygateway.com/market/summary-stats/?contractAddress=0xc0cf5b82ae2352303b2ea02c3be88e23f2594171&niftyType=8'
-
-  const data = JSON.stringify({
-    contractAddress: "0xc0cf5b82ae2352303b2ea02c3be88e23f2594171",
-      niftyType:"8",
-  });
 
   const [aCubeFloor, getData] = useState(null);
  
   useEffect(() => {
     
-    axios.get(url, data, {
-      headers: { 'Content-Type': 'application/json' }})
+    const options = {
+      method: 'GET',
+      url: 'https://http-cors-proxy.p.rapidapi.com/https://api.niftygateway.com/market/summary-stats/',
+      params: {contractAddress: '0xc0cf5b82ae2352303b2ea02c3be88e23f2594171', niftyType: '8'},
+      headers: {
+        'x-requested-with': 'example.com',
+        'X-RapidAPI-Key': 'ccab64ca0cmshd4373454ebf0fc3p118b2ejsnaa23aae244cf',
+        'X-RapidAPI-Host': 'http-cors-proxy.p.rapidapi.com'
+      }
+    };
+    
+    axios.request(options)
 
      .then((res) => {
       const niftyResponse = [res.data]; 
-      // console.log(niftyResponse);
+      console.log(niftyResponse);
       getData(niftyResponse);
 
      });
@@ -36,13 +40,20 @@ function ACubesFloor() {
 
     useEffect(() => {
 
-      axios.get('https://peaceful-shore-97914.herokuapp.com/https://api.opensea.io/collection/the-fungible-by-pak/stats', {
-        headers: { 'Content-Type': 'application/json' }
-      }
-      )
+      const options = {
+  method: 'GET',
+  url: 'https://http-cors-proxy.p.rapidapi.com/https://api.opensea.io/collection/the-fungible-by-pak/stats',
+  headers: {
+    'x-requested-with': 'example.com',
+    'X-RapidAPI-Key': 'ccab64ca0cmshd4373454ebf0fc3p118b2ejsnaa23aae244cf',
+    'X-RapidAPI-Host': 'http-cors-proxy.p.rapidapi.com'
+  }
+};
+
+axios.request(options)
       .then((res) => {
         const openSeaRes = [res.data.stats.floor_price];
-        // console.log(openSeaRes)
+        console.log(openSeaRes)
         setCubeOpen(openSeaRes[0]);
         
         
@@ -57,17 +68,21 @@ function ACubesFloor() {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
   
-    
-    const data = JSON.stringify({
-      contractAddress: "0xc0cf5b82ae2352303b2ea02c3be88e23f2594171",
-        niftyType:"7"
-    });
    
     useEffect(() => {
       setLoading(true);
-      axios.get('https://peaceful-shore-97914.herokuapp.com/https://api.niftygateway.com/market/summary-stats/?contractAddress=0xc0cf5b82ae2352303b2ea02c3be88e23f2594171&niftyType=7', data, {
-        headers: { 'Content-Type': 'application/json' }})
-  
+      const options = {
+        method: 'GET',
+        url: 'https://http-cors-proxy.p.rapidapi.com/https://api.niftygateway.com/market/summary-stats/',
+        params: {contractAddress: '0xc0cf5b82ae2352303b2ea02c3be88e23f2594171', niftyType: '7'},
+        headers: {
+          'x-requested-with': 'example.com',
+          'X-RapidAPI-Key': 'ccab64ca0cmshd4373454ebf0fc3p118b2ejsnaa23aae244cf',
+          'X-RapidAPI-Host': 'http-cors-proxy.p.rapidapi.com'
+        }
+      };
+      
+      axios.request(options)
        .then((res) => {
         const niftyFiveResponse = [res.data]; 
         fiveData(niftyFiveResponse);
@@ -88,16 +103,20 @@ function ACubesFloor() {
       const [loading, setLoading] = useState(false);
       const [error, setError] = useState(null);
 
-    const data = JSON.stringify({
-      contractAddress: "0xc0cf5b82ae2352303b2ea02c3be88e23f2594171",
-      niftyType: "6"
-    });
-
     useEffect(() => {
       setLoading(true);
-      axios.get('https://peaceful-shore-97914.herokuapp.com/https://api.niftygateway.com/market/summary-stats/?contractAddress=0xc0cf5b82ae2352303b2ea02c3be88e23f2594171&niftyType=6', data, {
-        headers: { 'Content-Type': 'application/json'}})
-        
+      const options = {
+        method: 'GET',
+        url: 'https://http-cors-proxy.p.rapidapi.com/https://api.niftygateway.com/market/summary-stats/',
+        params: {contractAddress: '0xc0cf5b82ae2352303b2ea02c3be88e23f2594171', niftyType: '6'},
+        headers: {
+          'x-requested-with': 'example.com',
+          'X-RapidAPI-Key': 'ccab64ca0cmshd4373454ebf0fc3p118b2ejsnaa23aae244cf',
+          'X-RapidAPI-Host': 'http-cors-proxy.p.rapidapi.com'
+        }
+      };
+      
+      axios.request(options)
         .then((res) => {
           const niftyTenResponse = [res.data];
           tenData(niftyTenResponse);
@@ -117,16 +136,20 @@ function ACubesFloor() {
       const [loading, setLoading] = useState(false);
       const [error, setError] = useState(null);
 
-    const data = JSON.stringify({
-      contractAddress: "0xc0cf5b82ae2352303b2ea02c3be88e23f2594171",
-      niftyType: "5"
-    });
-
     useEffect(() => {
       setLoading(true);
-      axios.get('https://peaceful-shore-97914.herokuapp.com/https://api.niftygateway.com/market/summary-stats/?contractAddress=0xc0cf5b82ae2352303b2ea02c3be88e23f2594171&niftyType=5', data, {
-        headers: { 'Content-Type': 'application/json'}})
-        
+      const options = {
+        method: 'GET',
+        url: 'https://http-cors-proxy.p.rapidapi.com/https://api.niftygateway.com/market/summary-stats/',
+        params: {contractAddress: '0xc0cf5b82ae2352303b2ea02c3be88e23f2594171', niftyType: '5'},
+        headers: {
+          'x-requested-with': 'example.com',
+          'X-RapidAPI-Key': 'ccab64ca0cmshd4373454ebf0fc3p118b2ejsnaa23aae244cf',
+          'X-RapidAPI-Host': 'http-cors-proxy.p.rapidapi.com'
+        }
+      };
+      
+      axios.request(options)
         .then((res) => {
           const niftyTwentyResponse = [res.data];
           twentyData(niftyTwentyResponse);
@@ -146,16 +169,20 @@ function ACubesFloor() {
       const [loading, setLoading] = useState(false);
       const [error, setError] = useState(null);
 
-    const data = JSON.stringify({
-      contractAddress: "0xc0cf5b82ae2352303b2ea02c3be88e23f2594171",
-      niftyType: "4"
-    });
-
     useEffect(() => {
       setLoading(true);
-      axios.get('https://peaceful-shore-97914.herokuapp.com/https://api.niftygateway.com/market/summary-stats/?contractAddress=0xc0cf5b82ae2352303b2ea02c3be88e23f2594171&niftyType=4', data, {
-        headers: { 'Content-Type': 'application/json'}})
-        
+      const options = {
+        method: 'GET',
+        url: 'https://http-cors-proxy.p.rapidapi.com/https://api.niftygateway.com/market/summary-stats/',
+        params: {contractAddress: '0xc0cf5b82ae2352303b2ea02c3be88e23f2594171', niftyType: '4'},
+        headers: {
+          'x-requested-with': 'example.com',
+          'X-RapidAPI-Key': 'ccab64ca0cmshd4373454ebf0fc3p118b2ejsnaa23aae244cf',
+          'X-RapidAPI-Host': 'http-cors-proxy.p.rapidapi.com'
+        }
+      };
+      
+      axios.request(options)
         .then((res) => {
           const niftyFiftyResponse = [res.data];
           fiftyData(niftyFiftyResponse);
@@ -175,16 +202,19 @@ function ACubesFloor() {
       const [loading, setLoading] = useState(false);
       const [error, setError] = useState(null);
 
-    const data = JSON.stringify({
-      contractAddress: "0xc0cf5b82ae2352303b2ea02c3be88e23f2594171",
-      niftyType: "3"
-    });
-
     useEffect(() => {
-      setLoading(true);
-      axios.get('https://peaceful-shore-97914.herokuapp.com/https://api.niftygateway.com/market/summary-stats/?contractAddress=0xc0cf5b82ae2352303b2ea02c3be88e23f2594171&niftyType=3', data, {
-        headers: { 'Content-Type': 'application/json'}})
-        
+      const options = {
+        method: 'GET',
+        url: 'https://http-cors-proxy.p.rapidapi.com/https://api.niftygateway.com/market/summary-stats/',
+        params: {contractAddress: '0xc0cf5b82ae2352303b2ea02c3be88e23f2594171', niftyType: '3'},
+        headers: {
+          'x-requested-with': 'example.com',
+          'X-RapidAPI-Key': 'ccab64ca0cmshd4373454ebf0fc3p118b2ejsnaa23aae244cf',
+          'X-RapidAPI-Host': 'http-cors-proxy.p.rapidapi.com'
+        }
+      };
+      
+      axios.request(options)
         .then((res) => {
           const niftyHundredResponse = [res.data];
           oneHundredData(niftyHundredResponse);
@@ -204,16 +234,20 @@ function ACubesFloor() {
       const [loading, setLoading] = useState(false);
       const [error, setError] = useState(null);
 
-    const data = JSON.stringify({
-      contractAddress: "0xc0cf5b82ae2352303b2ea02c3be88e23f2594171",
-      niftyType: "2"
-    });
-
     useEffect(() => {
       setLoading(true);
-      axios.get('https://peaceful-shore-97914.herokuapp.com/https://api.niftygateway.com/market/summary-stats/?contractAddress=0xc0cf5b82ae2352303b2ea02c3be88e23f2594171&niftyType=2', data, {
-        headers: { 'Content-Type': 'application/json'}})
-        
+      const options = {
+        method: 'GET',
+        url: 'https://http-cors-proxy.p.rapidapi.com/https://api.niftygateway.com/market/summary-stats/',
+        params: {contractAddress: '0xc0cf5b82ae2352303b2ea02c3be88e23f2594171', niftyType: '2'},
+        headers: {
+          'x-requested-with': 'example.com',
+          'X-RapidAPI-Key': 'ccab64ca0cmshd4373454ebf0fc3p118b2ejsnaa23aae244cf',
+          'X-RapidAPI-Host': 'http-cors-proxy.p.rapidapi.com'
+        }
+      };
+      
+      axios.request(options)
         .then((res) => {
           const niftyfiveHundredResponse = [res.data];
           fiveHundredData(niftyfiveHundredResponse);
@@ -233,16 +267,20 @@ function ACubesFloor() {
       // const [loading, setLoading] = useState(false);
       // const [error, setError] = useState(null);
 
-    const data = JSON.stringify({
-      contractAddress: "0xc0cf5b82ae2352303b2ea02c3be88e23f2594171",
-      niftyType: "1"
-    });
-
     useEffect(() => {
       // setLoading(true);
-      axios.get('https://peaceful-shore-97914.herokuapp.com/https://api.niftygateway.com/market/summary-stats/?contractAddress=0xc0cf5b82ae2352303b2ea02c3be88e23f2594171&niftyType=1', data, {
-        headers: { 'Content-Type': 'application/json'}})
-        
+      const options = {
+        method: 'GET',
+        url: 'https://http-cors-proxy.p.rapidapi.com/https://api.niftygateway.com/market/summary-stats/',
+        params: {contractAddress: '0xc0cf5b82ae2352303b2ea02c3be88e23f2594171', niftyType: '1'},
+        headers: {
+          'x-requested-with': 'example.com',
+          'X-RapidAPI-Key': 'ccab64ca0cmshd4373454ebf0fc3p118b2ejsnaa23aae244cf',
+          'X-RapidAPI-Host': 'http-cors-proxy.p.rapidapi.com'
+        }
+      };
+      
+      axios.request(options)
         .then((res) => {
           const niftyThousandResponse = [res.data];
           console.log(niftyThousandResponse);
