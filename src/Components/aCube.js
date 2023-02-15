@@ -2,13 +2,21 @@ import React from 'react';
 import '../App.css';
 import {CubeFloorsProps} from '../CubeStats'
 import CubeStatsApi from '../CubeStatsApi';
-import { ACubesFloor, ACubeOpenSea} from '../CubesFloor';
+import { CubesListing, ACubeOpenSea} from '../CubesFloor';
 
 
 
 export default function ACube() { 
+
+    CubesListing();
+   
+    //console.log(cubesListings);
+
+    // setTimeout(() => {
+    //    ACubesFloor();
+    //  }, 10000);
   
-  const  { aCubeFloor } = ACubesFloor();
+  //console.log(cubesListings);
   const { cubeOpen } = ACubeOpenSea();
   // console.log(aCubeFloor);
 
@@ -21,11 +29,11 @@ export default function ACube() {
 
    
 
-  return (
-    <div className="API">
-       {aCubeFloor && 
-        aCubeFloor.map((cubeFloor) => {
-        const { floor_price_in_cents, orig_price_in_cents } = cubeFloor; 
+  // return (
+  //   <div className="API">
+  //      {aCubeFloor && 
+  //       aCubeFloor.map((cubeFloor) => {
+  //       const { floor_price_in_cents, orig_price_in_cents } = cubeFloor; 
         
       return(
         <div className="CubeTitle">
@@ -35,14 +43,14 @@ export default function ACube() {
  type="video/mp4"/>
           </video>
        <div className="CubeType">
-               <CubeFloorsProps 
-              currentFloor={floor_price_in_cents/100} originalPrice={orig_price_in_cents/100}/>
-              <h2>OpenSea Floor: { cubeOpen } Ξ</h2>
+               {/* <CubeFloorsProps 
+              currentFloor={floor_price_in_cents/100} originalPrice = {orig_price_in_cents/100}/> */}
+              <h2>OpenSea Cube Floor: { cubeOpen?.toFixed(3) } Ξ</h2>
               <CubeStatsApi />
           </div>
           </div>
       );
-    })}
-        </div>
-        );
-}
+//     })}
+//         </div>
+//         );
+ }
